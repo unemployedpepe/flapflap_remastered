@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c2o0e8fr6vskj"
+path="res://.godot/imported/die.wav-ceb96f80b0606163c9676485065f3ba6.sample"
+
+[deps]
+
+source_file="res://assets flap/assets/audio/die.wav"
+dest_files=["res://.godot/imported/die.wav-ceb96f80b0606163c9676485065f3ba6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

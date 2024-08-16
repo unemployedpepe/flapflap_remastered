@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://qbs3vrue6vay"]
+
+[ext_resource type="Script" path="res://Objects/obstacle_spawner.gd" id="1_scuev"]
+[ext_resource type="PackedScene" uid="uid://bgyvaghh5qjyb" path="res://Objects/obstacle.tscn" id="2_7srwn"]
+
+[node name="ObstacleSpawner" type="Node2D"]
+script = ExtResource("1_scuev")
+obstacle = ExtResource("2_7srwn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

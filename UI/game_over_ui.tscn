@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmrbhi0gytks1"]
+
+[ext_resource type="FontFile" uid="uid://xiaoqmn4allp" path="res://assets flap/assets/fonts/flappyfont.TTF" id="1_5b5c8"]
+[ext_resource type="Script" path="res://UI/game_over_ui.gd" id="1_gsv2y"]
+
+[node name="GameOverUI" type="CanvasLayer"]
+script = ExtResource("1_gsv2y")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.0
+offset_top = -71.0
+offset_right = 166.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 12
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer2/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_5b5c8")
+theme_override_font_sizes/font_size = 45
+text = "Score: 0"
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="VBoxContainer2/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_5b5c8")
+theme_override_font_sizes/font_size = 45
+text = "Best:"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="VBoxContainer2/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_5b5c8")
+theme_override_font_sizes/font_size = 45
+text = "Restart"
+
+[node name="GridContainer2" type="GridContainer" parent="VBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(150, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -230.0
+offset_right = 171.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GameOverLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_5b5c8")
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+
+[connection signal="pressed" from="VBoxContainer2/MarginContainer/GridContainer/RestartButton" to="." method="_on_restart_button_pressed"]
