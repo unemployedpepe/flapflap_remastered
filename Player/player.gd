@@ -2,6 +2,9 @@ extends RigidBody2D
 signal died
 var playing = false 
 @export var flap_force = -520
+@onready var hit = $Hit
+@onready var flap_sound = $flap
+
 const MAX_ROTATION = -10
 var is_playing = true
 
@@ -30,9 +33,12 @@ func start():
 func flap(delta):
 	linear_velocity.y = flap_force
 	angular_velocity = -40 * delta
+	flap_sound.play()
 
 func die():
+	if !is_playing: return # adding this prevents 2nd sound in death 
 	is_playing = false
 	$AnimationPlayer.stop()
 	died.emit()
+	hit.play()
 	print("dead")

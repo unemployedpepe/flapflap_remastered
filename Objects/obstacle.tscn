@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgyvaghh5qjyb"]
+[gd_scene load_steps=5 format=3 uid="uid://bgyvaghh5qjyb"]
 
 [ext_resource type="Script" path="res://Objects/obstacle.gd" id="1_16ny8"]
 [ext_resource type="PackedScene" uid="uid://baavcapl8puik" path="res://Objects/walls.tscn" id="2_7bdis"]
+[ext_resource type="AudioStream" uid="uid://cs0la8g2aruw1" path="res://assets flap/assets/audio/point.wav" id="3_1sxwg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umaw1"]
-radius = 17.0
+radius = 4.0
 height = 148.0
 
 [node name="Obstacle" type="Node2D" groups=["obstacles"]]
@@ -21,7 +22,11 @@ rotation = 3.14159
 [node name="ScoreArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
+position = Vector2(18, -1)
 shape = SubResource("CapsuleShape2D_umaw1")
+
+[node name="ScorePoints" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1sxwg")
 
 [connection signal="body_entered" from="Walls" to="." method="_on_walls_body_entered"]
 [connection signal="body_entered" from="Walls2" to="." method="_on_walls_body_entered"]

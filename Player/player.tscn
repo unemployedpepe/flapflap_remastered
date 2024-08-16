@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dso5dnpyrluon"]
+[gd_scene load_steps=10 format=3 uid="uid://dso5dnpyrluon"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_7edp4"]
 [ext_resource type="Texture2D" uid="uid://b01t548a2c6fx" path="res://assets flap/assets/textures/panda.png" id="1_hksh7"]
+[ext_resource type="AudioStream" uid="uid://cnex2a3c3iavb" path="res://assets flap/assets/audio/hit.wav" id="3_2egub"]
+[ext_resource type="AudioStream" uid="uid://d21okj4d3vryl" path="res://assets flap/assets/audio/wing.wav" id="4_lg17i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dtpjv"]
 radius = 24.0
@@ -128,3 +130,9 @@ libraries = {
 "": SubResource("AnimationLibrary_5wpco")
 }
 autoplay = "idle"
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2egub")
+
+[node name="flap" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lg17i")
