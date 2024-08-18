@@ -17,8 +17,10 @@ var score: int:
 		hud.update_score(value)
 	
 
+
 func _ready(): 
 	obstacle_spawner.connect("obstacle_created", _on_obstacle_created)
+	DisplayServer.screen_set_orientation(DisplayServer.SCREEN_PORTRAIT)
 
 func player_score():
 	score += 1  

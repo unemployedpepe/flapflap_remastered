@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://beynyql4bmh8y"]
+[gd_scene load_steps=9 format=3 uid="uid://beynyql4bmh8y"]
 
 [ext_resource type="Script" path="res://Main/main_scene.gd" id="1_hwa5u"]
 [ext_resource type="Texture2D" uid="uid://jbno0infviq6" path="res://assets flap/assets/textures/background.png" id="1_jjhb0"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://wht36wkuxpbu" path="res://UI/menu_layer.tscn" id="3_x4plq"]
 [ext_resource type="PackedScene" uid="uid://qbs3vrue6vay" path="res://Objects/obstacle_spawner.tscn" id="5_d24sd"]
 [ext_resource type="PackedScene" uid="uid://ccatskqwmopby" path="res://UI/HUD.tscn" id="6_7drxs"]
+[ext_resource type="PackedScene" uid="uid://mxph3jyms3ju" path="res://Objects/top_bound.tscn" id="8_gjpcj"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_hwa5u")
@@ -27,6 +28,9 @@ position = Vector2(1, 741)
 
 [node name="Player" parent="." instance=ExtResource("2_1uspe")]
 position = Vector2(79, 427)
+
+[node name="TopBound" parent="." instance=ExtResource("8_gjpcj")]
+position = Vector2(238, -7)
 
 [connection signal="start_game" from="MenuLayer" to="." method="_on_menu_layer_start_game"]
 [connection signal="body_entered" from="Ground/DeathZone" to="." method="_on_death_zone_body_entered"]
